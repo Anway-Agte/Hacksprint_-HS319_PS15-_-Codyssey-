@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><h2>Task Manager</h2></a>
+    </div>
+    <div class="form">
+        
+        <ul class="top-area">
+            <li class="tab active", name="resource"><a href="#">Resource</a></li>
+            <li class="tab", name="manager"><a href="#">Manager</a></li>
+            <li class="tab", name="lead"><a href="#">Lead</a></li>
+        </ul>
+        <ul class="bottom-area">
+            <li class="tab active"><a href="#signup">Sign Up</a></li>
+            <li class="tab"><a href="#login">Log In</a></li>
+          </ul>
+        
+        <div class="tab-content">
+          <div id="signup">   
+            <h1>Sign Up for Free</h1>
+            
+            <form action="/" method="post">
+            
+            <div class="top-row">
+              <div class="label-field">
+                <label>
+                  First Name<span class="req">*</span>
+                </label>
+                <input type="text" name="signup_fname" required autocomplete="off" />
+              </div>
+          
+              <div class="label-field">
+                <label>
+                  Last Name<span class="req">*</span>
+                </label>
+                <input type="text" name="signup_lname" required autocomplete="off"/>
+              </div>
+            </div>
+   
+            <div class="label-field">
+              <label>
+                Email Address<span class="req">*</span>
+              </label>
+              <input type="email" name="signup_email" required autocomplete="off"/>
+            </div>
+            
+            <div class="label-field">
+              <label>
+                Set A Password<span class="req">*</span>
+              </label>
+              <input type="password" name="signup_password" required autocomplete="off"/>
+            </div>
+
+            <div class="error_message">
+              okay
+            </div>
+            
+            <button type="submit" class="button button-block"/>Sign Up</button>
+            
+            </form>
+   
+          </div>
+          
+          <div id="login">   
+            <h1>Welcome Back!</h1>
+            
+            <form action="/" method="post">
+            
+              <div class="label-field">
+              <label>
+                Email Address<span class="req">*</span>
+              </label>
+              <input type="email" name="login_email" required autocomplete="off"/>
+            </div>
+            
+            <div class="label-field">
+              <label>
+                Password<span class="req">*</span>
+              </label>
+              <input type="password" name="login_password" required autocomplete="off"/>
+            </div>
+            
+            <p class="forgot"><a href="#">Forgot Password?</a></p>
+            
+            <button class="button button-block">Log In</button>
+            
+            </form>
+   
+          </div>
+          
+        </div>  
+  </div>
+   
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script  src="signup.js"></script>
+</body>
+</html>
