@@ -121,13 +121,17 @@ body {
 
 .card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-  -webkit-column-break-inside: avoid;
-  padding: 24px;
-  box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 1000px;
+    margin-bottom: 20px;
+    -webkit-column-break-inside: avoid;
+    padding: 24px;
+    box-sizing: border-box;
+    background-image: url(images/wallpaperflare.com_wallpaper.jpg);
+    border-radius: 10px;
+    filter: drop-shadow(0px 5px 15px black);
 }
  #projects, #tasks, #description { 
   filter: drop-shadow(0px 5px 10px black);  
@@ -226,11 +230,11 @@ color: black;
 }
 
 #description  {
-   background-image: url(images/wallpaperflare.com_wallpaper.jpg);
-   background-size: cover;
-   background-repeat: no-repeat;
-   border-radius: 10px;
-   
+  width: 100%;
+  height:300px;
+  background-image: url(images/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .para {
@@ -241,17 +245,10 @@ color: black;
    border-radius: 10px;
    padding: 10px 10px 10px 10px;
    font-size: 1.5em; 
-   color: white;
+   color: black;
    
 }
 
-#chart {
-  background-image: url(images/wallpaperflare.com_wallpaper.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 10px;
- 
-}
 
 .bar {
   width: 100%;

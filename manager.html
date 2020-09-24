@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/c14caa40e6.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="manager.css">
+
+<title>Document</title>
+</head>
+
+<body>
+  <div class="grid-container">
+
+    <header class="header">
+      <div class="header__avatar">Manager</div>
+      <div class="logout-link">
+        <a href="../index.php?function=logout">
+          <div class="header__avatar">Logout</div><span title="Logout" class="glyphicon glyphicon-log-in"
+            style="size: 1em;"></span>
+        </a>
+      </div>
+    </header>
+
+    <div class="modals">
+      
+      <!-- Modal -->
+      <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">New Project</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Project Name:</label>
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Deadline:</label>
+                  <br>
+                  <input type="date" id="recipient-name">
+                </div>
+                <div class="form-group">
+                  <label for="cars">Choose a resource:</label>
+                <select style="padding-left: 10px;margin-left: 10px;margin-top: 14px; overflow-y: auto;font-size: 1.3em; width: 400px;"
+                  id="cars" name="cars">
+                  <option value="volvo">Volvo</option>
+                  <option value="saab">Saab</option>
+                  <option value="fiat">Fiat</option>
+                  <option value="audi">Audi</option>
+                  <option value="saab">oooooooooooooooooooooooooooooooooooooooooo</option>
+                  <option value="fiat">Fiat</option>
+                  <option value="audi">Audi</option>
+                  <option value="saab">Saab</option>
+                  <option value="fiat">Fiat</option>
+                  <option value="audi">Audi</option>
+                  <option value="saab">Saab</option>
+                  <option value="fiat">Fiat</option>
+                  <option value="audi">Audi</option>
+                  <option value="saab">Saab</option>
+                  <option value="fiat">Fiat</option>
+                  <option value="audi">Audi</option>
+                </select>
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Project Description: </label>
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="assign" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">  Assign a leader to this resource:</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <label for="cars">Choose a Project Leader:</label>
+              <select class = "assignresource" style="padding-left: 80px;margin-left: 30px;margin-top: 8px; overflow-y: auto;font-size: 1.3em;" id="assignresource"
+                name="cars">
+                <? displayLeaders() ;?> 
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary addleader" data-dismiss="modal">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <main class="main">
+      <div class="main-header">
+
+
+
+        <div class="task-status">
+          <div class="main-header__heading"><? displayName() ;?></div>
+          <div class="main-header__updates">How are you ? </div>
+        </div>
+      </div>
+
+      <!--cards-->
+
+
+
+
+      <div class="main-cards">
+        <div class="card" id="tasks">
+          <div class="task-container">
+            <div class="task-card" id="task">
+              <div class="heading">
+                <h4>Project 01:</h4>
+
+              </div>
+              <div class="content">
+                This is a project
+              </div>
+
+
+
+
+
+
+
+            </div>
+            <div class="task-card" id="task">
+
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+            <div class="task-card" id="task">
+
+            </div>
+
+          </div>
+
+
+
+
+
+        </div>
+        <div class="card" id="description">
+
+          <div class="para">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#form">Add Project</button>
+            <h3>New resource list: </h3>
+            <div class="list">
+
+            
+
+                 <? displayResource() ; ?>
+           
+
+
+
+            </div>
+          </div>
+        </div>
+        <div class="card" id="progress">
+          weiefhknsefseg
+
+        </div>
+       
+         
+          
+          
+      </div>
+    </main>
+
+    <footer class="footer">
+
+    </footer>
+  </div>
+
+
+</body>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script  src="http://stevemaverick221b-com.stackstaging.com/Hackathon/accounts/mger.js"></script>
+</html>
