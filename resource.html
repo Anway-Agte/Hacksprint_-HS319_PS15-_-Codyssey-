@@ -125,14 +125,14 @@
             <div class="task-category">
               <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Category
-                <span class="caret"></span></button>
+                  <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <li><a href="#">All Tasks</a></li>
                   <li><a href="#">New Tasks</a></li>
                   <li><a href="#">In-Progress Tasks</a></li>
                   <li><a href="#">Backlog Tasks</a></li>
                 </ul>
-              </div> 
+              </div>
             </div>
             <div class="add-button">
               <button class="list-button" data-toggle="modal" data-target="#add"
@@ -143,7 +143,7 @@
 
           <div class="list">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item" id="item01" onclick="myFunction('para', 'item01-description')">A
+              <li class="list-group-item" id="item01">A
                 <!-- button1-->
                 <button data-toggle="modal" data-target="#submit" class="list-button"
                   style="background-color:transparent; border: none;"><span title="Mark as done" class="fas fa-check"
@@ -161,7 +161,7 @@
                   okay
                 </div>
               </li>
-              <li class="list-group-item" id="item01" onclick="myFunction('para', 'item02-description')">A
+              <li class="list-group-item" id="item01">A
                 <!-- button1-->
                 <button data-toggle="modal" data-target="#submit" class="list-button"
                   style="background-color:transparent; border: none;"><span title="Mark as done" class="fas fa-check"
@@ -179,7 +179,7 @@
                   okay2
                 </div>
               </li>
-             
+
 
             </ul>
 
@@ -195,29 +195,13 @@
             </p>
           </div>
         </div>
-      
+
       </div>
     </main>
 
-    <footer class="footer">
-
-    </footer>
   </div>
   </div>
 
 </body>
-<script>
-  function myFunction(id, txt) {
-    var x = document.getElementById(id);
-    var y = document.getElementById(txt).innerHTML;
-    if (x.innerHTML == y) {
-      x.innerHTML = " ";
-    }
-    else {
-      x.innerHTML = y;
-    }
-  }
-
-</script>
 
 </html>

@@ -136,6 +136,133 @@
           </div>
         </div>
       </div>
+      <div class="modal fade" id="reassign" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Reassign task: </h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Task Name:</label>
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Description:</label>
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+                <div class="form-group">
+
+                  <label for="cars">Choose a new resource:</label>
+                  <select
+                    style="padding-left: 80px;margin-left: 30px;margin-top: 8px; overflow-y: auto;font-size: 1.3em;"
+                    id="cars" name="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modify" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Modify task:</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Resource Name:</label>
+                  <div class="name"> UwU 69</div>
+                </div>
+
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Task Name:</label>
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Description:</label>
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="add1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Add Task: </h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Task Name:</label>
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Description:</label>
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Deadline:</label>
+                  <input type="date" id="message-text">
+                </div>
+
+
+
+                <label for="cars">Resource Name:</label>
+                <div class="name"> UwU 69</div>
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -156,6 +283,7 @@
           </div>
 
           <div class="list">
+
             <ul class="list-group list-group-flush">
               <li class="list-group-item">A
 
@@ -206,14 +334,77 @@
 
         <div class="card" id="description">
           <div class="para">
-            <p>
-            </p>
+            <h4>Task Change Request: </h4>
+            <div class="list">
+              <ul class="list-group list-group-flush">
+                <div class="list-item-wrapper">
+                  <div class="resource-name" style="color: black;">
+                    UwU 69:
+                  </div>
+                  <li class="list-group-item">A
+
+                    <!--button 1-->
+                    <button class="list-button" style="background-color:transparent; border: none;"><span
+                        title="Decline Task Change Request" class="fas fa-times"
+                        style="font-size: 1em;"></span></button>
+
+                    <!--button 2-->
+                    <button data-toggle="modal" data-target="#reassign" class="list-button"
+                      style="background-color:transparent; border: none;"><span title="Reassign Task"
+                        class="fas fa-plus" style="font-size: 1em;"></span></button>
+
+                    <!-- button 3 -->
+                    <button data-toggle="modal" data-target="#modify" class="list-button"
+                      style="background-color:transparent; border: none;"><span title="Change Task" class="fas fa-edit"
+                        style="font-size: 1em;"></span></button>
+
+                    <!-- button 4 -->
+                    <button class="list-button" style="background-color:transparent; border: none;"><span
+                        title="Mark as done" class="fas fa-check" style="font-size: 1em;"></span></button>
+
+
+
+                  </li>
+                </div>
+
+              </ul>
+
+
+
+            </div>
           </div>
         </div>
         <div class="card" id="description">
           <div class="para">
-            <p>
-            </p>
+            <h4>New Task Request: </h4>
+            <div class="list">
+              <ul class="list-group list-group-flush">
+                <div class="list-item-wrapper">
+                  <div class="resource-name" style="color: black;">
+                    UwU 69:
+                  </div>
+                  <li class="list-group-item">A
+
+                    <!--button 1-->
+                    <button class="list-button" style="background-color:transparent; border: none;"><span
+                        title="Decline" class="fas fa-times" style="font-size: 1em;"></span></button>
+
+
+                    <!-- button 4 -->
+                    <button class="list-button" data-toggle="modal" data-target="#add1"
+                      style="background-color:transparent; border: none;"><span title="Accept" class="fas fa-check"
+                        style="font-size: 1em;"></span></button>
+
+
+
+                  </li>
+                </div>
+
+              </ul>
+
+
+
+            </div>
           </div>
         </div>
 
