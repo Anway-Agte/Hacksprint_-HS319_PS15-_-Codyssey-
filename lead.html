@@ -10,10 +10,10 @@
   <script src="https://kit.fontawesome.com/c14caa40e6.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="lead.css">
-</head>
-<title>Lead</title>
-</head>
 
+<title>Lead</title>
+
+</head>
 <body>
   <div class="grid-container">
 
@@ -21,7 +21,7 @@
     <header class="header">
       <div class="header__avatar">Lead</div>
       <div class="logout-link">
-        <a href="index.html">
+        <a href="../index.php?function=logout">
           <div class="header__avatar">Logout</div><span title="Logout" class="glyphicon glyphicon-log-in"
             style="size: 1em;"></span>
         </a>
@@ -29,6 +29,26 @@
     </header>
 
     <div class="modals">
+        <div class="modal fade" id="dismiss" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Submit</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Do you want to dismiss this request ?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+              <button type="button" data-dismiss="modal" class="btn btn-primary req_dismiss">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="modal fade" id="change" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -42,18 +62,29 @@
             <div class="modal-body">
               <form>
                 <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Task Name:</label>
-                  <input type="text" class="form-control" id="recipient-name">
+                  <label for="recipient-name" class="col-form-label ">Task Name:</label>
+                  <input type="text" class="form-control newtask" id="recipient-name">
                 </div>
                 <div class="form-group">
                   <label for="message-text" class="col-form-label">Description:</label>
-                  <textarea class="form-control" id="message-text"></textarea>
+                  <textarea class="form-control  newdescrip" id="message-text"></textarea>
                 </div>
+                    <div class="form-group">
+                  <label for="message-text" class="col-form-label ">Deadline:</label>
+                  <input type="date" class = "new_deadline" id="message-text">
+                </div>
+
+                   <label for="cars">Choose a resource:</label>
+                <select style="padding-left: 80px;margin-left: 30px;margin-top: 8px; overflow-y: auto;font-size: 1.3em;"
+                  id="cars" class = "new_res" name="cars">
+                    <option label=" "></option> 
+                  <? displayLeaderResources() ; ?> 
+                </select>
               </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Send message</button>
+              <button type="button" data-dismiss="modal" class="btn btn-primary modify">Modify</button>
             </div>
           </div>
         </div>
@@ -73,7 +104,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-              <button type="button" class="btn btn-primary">Yes</button>
+              <button type="button" data-dismiss="modal" class="btn btn-primary delbutton">Yes</button>
             </div>
           </div>
         </div>
@@ -93,45 +124,30 @@
             <div class="modal-body">
               <form>
                 <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Task Name:</label>
-                  <input type="text" class="form-control" id="recipient-name">
+                  <label for="recipient-name" class="col-form-label ">Task Name:</label>
+                  <input type="text" class="form-control create_task_name" id="recipient-name">
                 </div>
                 <div class="form-group">
                   <label for="message-text" class="col-form-label">Description:</label>
-                  <textarea class="form-control" id="message-text"></textarea>
+                  <textarea class="form-control  create_description" id="message-text"></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="message-text" class="col-form-label">Deadline:</label>
-                  <input type="date" id="message-text">
+                  <label for="message-text" class="col-form-label ">Deadline:</label>
+                  <input type="date" class = "create_deadline" id="message-text">
                 </div>
 
 
-
+                  
                 <label for="cars">Choose a resource:</label>
                 <select style="padding-left: 80px;margin-left: 30px;margin-top: 8px; overflow-y: auto;font-size: 1.3em;"
-                  id="cars" name="cars">
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="fiat">Fiat</option>
-                  <option value="audi">Audi</option>
-                  <option value="saab">Saab</option>
-                  <option value="fiat">Fiat</option>
-                  <option value="audi">Audi</option>
-                  <option value="saab">Saab</option>
-                  <option value="fiat">Fiat</option>
-                  <option value="audi">Audi</option>
-                  <option value="saab">Saab</option>
-                  <option value="fiat">Fiat</option>
-                  <option value="audi">Audi</option>
-                  <option value="saab">Saab</option>
-                  <option value="fiat">Fiat</option>
-                  <option value="audi">Audi</option>
+                  id="cars" class = "create_resource" name="cars">
+                  <? displayLeaderResources() ; ?> 
                 </select>
               </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Send message</button>
+              <button type="button" class="btn btn-primary create_task" data-dismiss="modal">Create Task</button>
             </div>
           </div>
         </div>
@@ -148,117 +164,21 @@
             </div>
             <div class="modal-body">
               <form>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Task Name:</label>
-                  <input type="text" class="form-control" id="recipient-name">
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Description:</label>
-                  <textarea class="form-control" id="message-text"></textarea>
-                </div>
+              
                 <div class="form-group">
 
                   <label for="cars">Choose a new resource:</label>
                   <select
-                    style="padding-left: 80px;margin-left: 30px;margin-top: 8px; overflow-y: auto;font-size: 1.3em;"
+                    class = "reassignresource" style="padding-left: 80px;margin-left: 30px;margin-top: 8px; overflow-y: auto;font-size: 1.3em;"
                     id="cars" name="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="audi">Audi</option>
-                    <option value="saab">Saab</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="audi">Audi</option>
-                    <option value="saab">Saab</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="audi">Audi</option>
-                    <option value="saab">Saab</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="audi">Audi</option>
-                    <option value="saab">Saab</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="audi">Audi</option>
+               <? displayLeaderResources() ; ?>
                   </select>
                 </div>
               </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Send message</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="modify" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title" id="exampleModalLabel">Modify task:</h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-
-              <form>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Resource Name:</label>
-                  <div class="name"> UwU 69</div>
-                </div>
-
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Task Name:</label>
-                  <input type="text" class="form-control" id="recipient-name">
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Description:</label>
-                  <textarea class="form-control" id="message-text"></textarea>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Send message</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="add1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title" id="exampleModalLabel">Add Task: </h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Task Name:</label>
-                  <input type="text" class="form-control" id="recipient-name">
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Description:</label>
-                  <textarea class="form-control" id="message-text"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Deadline:</label>
-                  <input type="date" id="message-text">
-                </div>
-
-
-
-                <label for="cars">Resource Name:</label>
-                <div class="name"> UwU 69</div>
-
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Send message</button>
+              <button type="button" data-dismiss="modal" class="btn btn-primary re_button">Reassign</button>
             </div>
           </div>
         </div>
@@ -269,10 +189,15 @@
     <main class="main">
       <div class="main-header">
         <div class="task-status">
-          <div class="main-header__heading">Hello User</div>
-          <div class="main-header__updates">Recent Items</div>
+          <div class="main-header__heading"><? displayName() ; ?></div>
+          <div class="main-header__updates">Here's what on your plate !</div>
         </div>
       </div>
+      <div class="card" id="dashboard">
+        <div class="dashboard-content">
+            <!-- dahsboard -->
+        </div>
+    </div>
 
 
 
@@ -284,12 +209,11 @@
 
           <div class="list">
 
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">A
+            <ul class="list-group list-group-flush projects">
+             <?displayLeadProject() ; ?>
 
-
-
-              </li>
+                
+              
 
             </ul>
 
@@ -309,20 +233,8 @@
           </div>
 
           <div class="list">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">A
-
-
-                <!--button 1-->
-                <button class="list-button" data-toggle="modal" data-target="#delete"
-                  style="background-color:transparent; border: none;"><span title="Delete Task" class="fas fa-trash"
-                    style="font-size: 1em;"></span></button>
-
-                <!--button 2-->
-                <button data-toggle="modal" data-target="#change" class="list-button"
-                  style="background-color:transparent; border: none;"><span title="Modify task" class="fas fa-edit"
-                    style="font-size: 1em;"></span></button>
-              </li>
+            <ul class="list-group list-group-flush list_tasks">
+            
 
             </ul>
 
@@ -336,36 +248,14 @@
           <div class="para">
             <h4>Task Change Request: </h4>
             <div class="list">
-              <ul class="list-group list-group-flush">
-                <div class="list-item-wrapper">
-                  <div class="resource-name" style="color: black;">
-                    UwU 69:
-                  </div>
-                  <li class="list-group-item">A
-
+              <ul class="list-group list-group-flush crs">
+               
+                  
+                  
+                            <? displayRequest() ;?>
                     <!--button 1-->
-                    <button class="list-button" style="background-color:transparent; border: none;"><span
-                        title="Decline Task Change Request" class="fas fa-times"
-                        style="font-size: 1em;"></span></button>
-
-                    <!--button 2-->
-                    <button data-toggle="modal" data-target="#reassign" class="list-button"
-                      style="background-color:transparent; border: none;"><span title="Reassign Task"
-                        class="fas fa-plus" style="font-size: 1em;"></span></button>
-
-                    <!-- button 3 -->
-                    <button data-toggle="modal" data-target="#modify" class="list-button"
-                      style="background-color:transparent; border: none;"><span title="Change Task" class="fas fa-edit"
-                        style="font-size: 1em;"></span></button>
-
-                    <!-- button 4 -->
-                    <button class="list-button" style="background-color:transparent; border: none;"><span
-                        title="Mark as done" class="fas fa-check" style="font-size: 1em;"></span></button>
-
-
-
-                  </li>
-                </div>
+                    
+                
 
               </ul>
 
@@ -380,21 +270,10 @@
             <div class="list">
               <ul class="list-group list-group-flush">
                 <div class="list-item-wrapper">
-                  <div class="resource-name" style="color: black;">
-                    UwU 69:
-                  </div>
-                  <li class="list-group-item">A
-
-                    <!--button 1-->
-                    <button class="list-button" style="background-color:transparent; border: none;"><span
-                        title="Decline" class="fas fa-times" style="font-size: 1em;"></span></button>
-
-
-                    <!-- button 4 -->
-                    <button class="list-button" data-toggle="modal" data-target="#add1"
-                      style="background-color:transparent; border: none;"><span title="Accept" class="fas fa-check"
-                        style="font-size: 1em;"></span></button>
-
+                
+                  <li class="list-group-item">
+                      Resource Name
+                    
 
 
                   </li>
@@ -412,12 +291,10 @@
   </div>
   </main>
 
-  <footer class="footer">
-
-  </footer>
   </div>
   </div>
 
 </body>
-
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script  src="http://stevemaverick221b-com.stackstaging.com/Hackathon/accounts/lead.js"></script>
 </html>
