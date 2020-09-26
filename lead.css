@@ -32,12 +32,12 @@ body {
 }
 
 .main-header {
-  background-image: url(views/hd_header_bg.jpg);
+  background-image: url(views/header.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: fit-content;
-  width: fit-content;
+  width: 97%;
 }
 
 .logout-link {
@@ -181,6 +181,7 @@ body {
 .list-group-item {
   margin: 5px 5px 10px 5px;
   border-radius: 10px 10px 10px 10px;
+    background-color: white ; 
 }
 
 .list-group-item:first-child {
@@ -199,11 +200,12 @@ body {
  
   animation-name: fade;
   animation-duration: 1s;
-  background-color: lightgrey;
+  background-color: limegreen;
+    color:black ;
 }
 @keyframes fade {
-   from  {background-color:white;}
-   to {background-color: lightgray;}
+   from  {background-color:limegreen ;color:black ; }
+   to {background-color: limegreen; color:black ;}
 }
 
 .list-button {
@@ -214,6 +216,10 @@ body {
    width: 20px;
    align-items: center;
    justify-content: center;
+}
+.list-group-item.active{
+    background-color: limegreen ; 
+     color:black ;
 }
 
 .task-title {
@@ -312,4 +318,33 @@ color: black;
   height: 300px;
   width: 95%;
   margin-left: 40px;
+
+}
+.main-header__heading{
+    font-size: 35px ; 
+    color:white ; 
+} 
+.main-header__updates{
+    font-size:25px ;
+    color:white ; 
+}
+
+
+.table-container {
+ width: 1400px;
+  height: 250px;
+  color: black;
+  text-align: center;
+  overflow-y: auto;
+}
+
+th {
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
 }
